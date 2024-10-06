@@ -19,3 +19,11 @@ shape = SubResource("CircleShape2D_hr5l2")
 position = Vector2(21.2979, -303741)
 scale = Vector2(0.0378331, 210.484)
 texture = ExtResource("2_oxeu0")
+
+[node name="PuntoDeDisparo" type="Marker2D" parent="."]
+position = Vector2(20.3513, -282738)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
