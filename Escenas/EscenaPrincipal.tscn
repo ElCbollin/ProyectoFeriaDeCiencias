@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://01q6pnnrrggs"]
 
-[ext_resource type="Texture2D" uid="uid://bjs3bg012nujk" path="res://Assets/spacebg.png" id="1_odsfq"]
-[ext_resource type="Script" path="res://button.gd" id="2_mfuko"]
+[ext_resource type="Texture2D" uid="uid://bjs3bg012nujk" path="res://Assets/spacebg.png" id="1_l1fdj"]
+[ext_resource type="Script" path="res://button.gd" id="2_fwidj"]
 
 [sub_resource type="Theme" id="Theme_ufdps"]
 
@@ -11,17 +11,17 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
 position = Vector2(200, 326)
-scale = Vector2(0.657812, 1.22344)
-texture = ExtResource("1_odsfq")
+scale = Vector2(1.05781, 1.52315)
+texture = ExtResource("1_l1fdj")
 
 [node name="Spawner" type="Marker2D" parent="ParallaxBackground"]
-position = Vector2(211, 516)
+position = Vector2(-5, 80)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 69.0
-offset_top = 470.0
-offset_right = 172.0
-offset_bottom = 501.0
+offset_left = 51.0
+offset_top = 483.0
+offset_right = 154.0
+offset_bottom = 514.0
 scale = Vector2(2.51637, 3.024)
 theme = SubResource("Theme_ufdps")
 theme_override_colors/font_disabled_color = Color(0.109709, 0.396309, 0.730787, 1)
@@ -29,7 +29,7 @@ theme_override_font_sizes/font_size = 0
 text = "Iniciar juego
 "
 text_overrun_behavior = 2
-script = ExtResource("2_mfuko")
+script = ExtResource("2_fwidj")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.05
