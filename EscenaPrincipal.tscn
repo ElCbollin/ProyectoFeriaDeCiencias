@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://bimoeyp7ngp66"]
+[gd_scene load_steps=2 format=3 uid="uid://01q6pnnrrggs"]
+
+[ext_resource type="Texture2D" uid="uid://bjs3bg012nujk" path="res://Assets/spacebg.png" id="1_odsfq"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(205, 331)
+scale = Vector2(0.657812, 1.22344)
+texture = ExtResource("1_odsfq")
