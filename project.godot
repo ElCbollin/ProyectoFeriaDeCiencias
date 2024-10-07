@@ -11,14 +11,21 @@ config_version=5
 [application]
 
 config/name="Proyecto_feria_de_ciencias"
+run/main_scene="res://Escenas/EscenaPrincipal.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=450
-window/size/viewport_height=700
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/mode=4
 window/size/resizable=false
+window/energy_saving/keep_screen_on=false
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/stretch/scale=1.23
+window/handheld/orientation=1
 
 [file_customization]
 

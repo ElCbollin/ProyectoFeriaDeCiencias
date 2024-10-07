@@ -10,18 +10,18 @@
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(200, 326)
-scale = Vector2(1.05781, 1.52315)
+position = Vector2(357.375, 637.5)
+scale = Vector2(1.1207, 1.99219)
 texture = ExtResource("1_l1fdj")
 
 [node name="Spawner" type="Marker2D" parent="ParallaxBackground"]
 position = Vector2(-5, 80)
 
 [node name="Button" type="Button" parent="."]
-offset_left = 51.0
-offset_top = 483.0
-offset_right = 154.0
-offset_bottom = 514.0
+offset_left = 232.0
+offset_top = 805.0
+offset_right = 335.0
+offset_bottom = 836.0
 scale = Vector2(2.51637, 3.024)
 theme = SubResource("Theme_ufdps")
 theme_override_colors/font_disabled_color = Color(0.109709, 0.396309, 0.730787, 1)
