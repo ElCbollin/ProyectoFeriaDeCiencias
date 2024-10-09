@@ -1,26 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bimoeyp7ngp66"]
+[gd_scene load_steps=4 format=3 uid="uid://bimoeyp7ngp66"]
 
 [ext_resource type="Texture2D" uid="uid://bnbvdd3slwtfq" path="res://Assets/spaceShips_001.png" id="1_41dag"]
+[ext_resource type="Script" path="res://Escenas/personaje.gd" id="1_n583n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hr5l2"]
-radius = 1.7086
+radius = 2.12743
 
 [node name="Area2D" type="Area2D"]
 scale = Vector2(8.45156, -0.00185684)
+script = ExtResource("1_n583n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(21.1795, -303741)
+position = Vector2(46.8553, -631719)
 scale = Vector2(1.63082, -10272.8)
 shape = SubResource("CircleShape2D_hr5l2")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(21.2978, -303203)
-scale = Vector2(0.0391492, 211.689)
-texture = ExtResource("1_41dag")
-
 [node name="PuntoDeDisparo" type="Marker2D" parent="."]
-position = Vector2(20.3513, -282738)
+position = Vector2(52.8323, -575425)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(47.0919, -631719)
+scale = Vector2(0.0611398, 301.615)
+texture = ExtResource("1_41dag")
+offset = Vector2(0.5, 0.5)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

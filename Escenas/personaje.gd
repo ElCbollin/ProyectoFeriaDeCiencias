@@ -13,7 +13,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	
-	print(ScreenSize)
 	var velocity = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_right"):
@@ -31,7 +30,7 @@ func _process(delta: float) -> void:
 
 	# Actualiza la posición del objeto y restringe dentro de la pantalla
 	position += velocity
-	position = position.clamp(-ScreenSize/3, ScreenSize/2)
+	position = position.clamp(Vector2(-370,-370),ScreenSize/4)
 
 func Disparar():
 	
