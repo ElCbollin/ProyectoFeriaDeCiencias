@@ -1,14 +1,17 @@
 extends Node2D
 var SizeScreen 
+var Numeros= preload("res://Escenas/Numbers.tscn")
 
 var Operaciones = {1 :{"Pregunta" : "5+2(4-2)",
 						  "Respuesta": "9",
-						 "Opciones": ["7","9","11"],},
+						 "Opciones": ["7","9","8","6"],},
 						   
 					2: {"Pregunta" : "5(1+5)/2",
-						 "Respuesta": "15"},
-					 3: {"Pregunta" : "-2(5-2)",
-						  "Respuesta": "-6"}}
+						 "Respuesta": "15",
+						"Opciones":["15","7","11","14"]},
+					 3: {"Pregunta" : "2(5-2)",
+						  "Respuesta": "6",
+							"Opciones":["1","5","4","6"]}}
 
 var EstadoDelJuego:bool = false
 var OperacionActiva:bool = false
@@ -59,7 +62,30 @@ func InicioDeJuego():
 	if OperacionActiva == false:
 		OperacionActiva = true
 		var RandomNumber = int(randf_range(1,3))
-		$Control/HBoxContainer/OperacionAritmetica.text = str(Operaciones[RandomNumber]["Pregunta"])
+		for i in range(0,4):
+			var InstanceNumbers = Numeros.instantiate()
+			Root.add_child(InstanceNumbers)
+			InstanceNumbers.global_position.x = 200*i
+			var PreguntaElegida = Operaciones[RandomNumber]["Pregunta"]	
+			$Control/HBoxContainer/OperacionAritmetica.text = str(PreguntaElegida)
+		
+			InstanceNumbers.find_child("AnimatedSprite2D").play(Operaciones[RandomNumber]["Opciones"][i])
+		
+		
+		
+		
+		
+		
+
+		
+		
+		
+			
+	
+			
+
+		
+			
 		
 
 		
