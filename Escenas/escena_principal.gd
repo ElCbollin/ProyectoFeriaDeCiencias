@@ -1,7 +1,17 @@
 extends Node2D
 var SizeScreen 
 
+var Operaciones = {1 :{"Pregunta" : "5+2(4-2)",
+						  "Respuesta": "9",
+						 "Opciones": ["7","9","11"],},
+						   
+					2: {"Pregunta" : "5(1+5)/2",
+						 "Respuesta": "15"},
+					 3: {"Pregunta" : "-2(5-2)",
+						  "Respuesta": "-6"}}
+
 var EstadoDelJuego:bool = false
+var OperacionActiva:bool = false
 @onready var Root = get_node("/root/Node2D")
 
 
@@ -10,8 +20,8 @@ var Ship = preload("res://Escenas/Personaje.tscn")
 func _ready() -> void:
 	SizeScreen = get_viewport_rect().size
 	$Control/Button.button_down.connect(Iniciar)
-	print(Root)
-
+	
+	
 
 	# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -26,6 +36,10 @@ func _process(delta: float) -> void:
 			$Timer2.start() 
 			ShipInstance.position = $Marker2D.position
 func Iniciar():
+	
+	InicioDeJuego()
+	
+	
 
 	
 	$Timer.start()
@@ -40,5 +54,22 @@ func _on_timer_2_timeout() -> void:
 				v.position.y -= 25
 
 	
+func InicioDeJuego():
+	
+	if OperacionActiva == false:
+		OperacionActiva = true
+		var RandomNumber = int(randf_range(1,3))
+		$Control/HBoxContainer/OperacionAritmetica.text = str(Operaciones[RandomNumber]["Pregunta"])
+		
 
+		
+
+
+		
+		
+
+
+	
+	
+	
 	

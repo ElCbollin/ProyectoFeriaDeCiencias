@@ -11,12 +11,12 @@ scale = Vector2(8.45156, -0.00185684)
 script = ExtResource("1_n583n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(46.8553, -631719)
+position = Vector2(47.0919, -626871)
 scale = Vector2(1.63082, -10272.8)
 shape = SubResource("CircleShape2D_hr5l2")
 
 [node name="PuntoDeDisparo" type="Marker2D" parent="."]
-position = Vector2(52.8323, -575425)
+position = Vector2(47.2102, -603175)
 
 [node name="Timer" type="Timer" parent="."]
 
