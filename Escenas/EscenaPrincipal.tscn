@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://01q6pnnrrggs"]
+[gd_scene load_steps=9 format=3 uid="uid://01q6pnnrrggs"]
 
 [ext_resource type="Texture2D" uid="uid://bjs3bg012nujk" path="res://Assets/spacebg.png" id="1_l1fdj"]
 [ext_resource type="Script" path="res://Escenas/escena_principal.gd" id="1_lgpwl"]
-[ext_resource type="FontFile" uid="uid://c057uuu28m84p" path="res://Assets/Teko-VariableFont_wght.ttf" id="3_j1mvs"]
+[ext_resource type="FontFile" uid="uid://bfc7e8im2qap8" path="res://Assets/Kenney Future.ttf" id="3_ujj8i"]
+[ext_resource type="Texture2D" uid="uid://dfbts4pvhlgre" path="res://Assets/image-removebg-preview_(5)_(1)-transformed.png" id="4_kj166"]
 
 [sub_resource type="Theme" id="Theme_3yqcp"]
-default_font = ExtResource("3_j1mvs")
+default_font = ExtResource("3_ujj8i")
 
 [sub_resource type="Theme" id="Theme_ufdps"]
+
+[sub_resource type="Theme" id="Theme_b0nx5"]
+default_font = ExtResource("3_ujj8i")
+
+[sub_resource type="Theme" id="Theme_e850l"]
+default_font = ExtResource("3_ujj8i")
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(3, -16)
@@ -16,6 +23,7 @@ script = ExtResource("1_lgpwl")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+texture_filter = 1
 position = Vector2(332, 669)
 scale = Vector2(1.77188, 2.25938)
 texture = ExtResource("1_l1fdj")
@@ -24,13 +32,14 @@ texture = ExtResource("1_l1fdj")
 wait_time = 0.05
 
 [node name="Control" type="Control" parent="."]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 0
-offset_left = 8.0
-offset_top = -28.0
-offset_right = 728.0
-offset_bottom = 1252.0
-scale = Vector2(0.978631, 1.02016)
+offset_left = 12.0
+offset_top = -29.0
+offset_right = 732.0
+offset_bottom = 1251.0
+scale = Vector2(0.952868, 1.04511)
 theme = SubResource("Theme_3yqcp")
 
 [node name="Button" type="Button" parent="Control"]
@@ -59,21 +68,82 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 223.782
-offset_top = -363.479
-offset_right = 405.782
-offset_bottom = -339.479
+offset_left = 142.727
+offset_top = -474.346
+offset_right = 2542.73
+offset_bottom = 1219.65
 grow_vertical = 0
-scale = Vector2(3.26405, 3.19674)
+scale = Vector2(0.320534, 0.121289)
 size_flags_vertical = 8
 
-[node name="Label" type="Label" parent="Control/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+texture_filter = 1
 layout_mode = 2
+stretch_mode = 2
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Control/HBoxContainer/TextureRect"]
+texture_filter = 3
+texture_repeat = 1
+position = Vector2(1024.8, 1112.34)
+scale = Vector2(23.823, -52.2624)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/TextureRect/StaticBody2D"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-3.16101, 0.150948)
+scale = Vector2(0.0518042, -0.0163421)
+texture = ExtResource("4_kj166")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect"]
+texture_filter = 2
+texture_repeat = 2
+offset_left = 98.2234
+offset_top = 702.114
+offset_right = 363.223
+offset_bottom = 751.114
+scale = Vector2(4.19269, 13.941)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Obten el resultado de :
 "
+vertical_alignment = 1
 
-[node name="OperacionAritmetica" type="Label" parent="Control/HBoxContainer"]
-layout_mode = 2
+[node name="OperacionAritmetica" type="Label" parent="Control/HBoxContainer/TextureRect"]
+texture_filter = 2
+texture_repeat = 2
+offset_left = 1237.61
+offset_top = 907.225
+offset_right = 1331.61
+offset_bottom = 946.225
+scale = Vector2(5.77133, 15.4605)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Control/HBoxContainer/TextureRect"]
+position = Vector2(170.254, -7486.58)
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/TextureRect/StaticBody2D2"]
+position = Vector2(847.995, 1680.34)
+scale = Vector2(0.5, 0.537738)
+texture = ExtResource("4_kj166")
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect/StaticBody2D2"]
+offset_left = 563.147
+offset_top = 1451.56
+offset_right = 743.147
+offset_bottom = 1474.56
+scale = Vector2(3.48128, 7.16438)
+theme = SubResource("Theme_b0nx5")
+text = "Numero actual 
+"
+
+[node name="NumeroActual" type="Label" parent="Control/HBoxContainer/TextureRect/StaticBody2D2"]
+offset_left = 815.254
+offset_top = 1546.23
+offset_right = 855.254
+offset_bottom = 1569.23
+scale = Vector2(6.89339, 16.1467)
+theme = SubResource("Theme_e850l")
+text = "
+"
 
 [node name="Timer2" type="Timer" parent="."]
 wait_time = 0.05

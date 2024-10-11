@@ -15,6 +15,10 @@ run/main_scene="res://Escenas/EscenaPrincipal.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*res://global.gd"
+
 [display]
 
 window/size/viewport_width=720
@@ -33,6 +37,10 @@ folder_colors={
 "res://Assets/": "green",
 "res://Escenas/": "yellow"
 }
+
+[global_group]
+
+Solucion=""
 
 [input]
 

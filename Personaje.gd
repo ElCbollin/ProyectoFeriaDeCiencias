@@ -3,10 +3,13 @@ extends Area2D
 
 var Screensize
 
-var Proyectil = preload("res://proyectil.tscn")
+var Proyectil = preload("res://Escenas/proyectil.tscn")
+
+
 
 func _ready() -> void:
 	Screensize = get_viewport_rect().size
+	var TablaDeSumas = []
 
 func _process(delta: float) -> void:
 	

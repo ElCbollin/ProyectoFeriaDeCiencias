@@ -1,17 +1,17 @@
 extends Node2D
 var SizeScreen 
-var Numeros= preload("res://Escenas/Numbers.tscn")
+var Numeros= preload("res://Escenas/NumbersNew.tscn")
 
 var Operaciones = {1 :{"Pregunta" : "5+2(4-2)",
 						  "Respuesta": "9",
-						 "Opciones": ["7","9","8","6"],},
+						 "Opciones": ["5","9","4","6","3","1"],},
 						   
-					2: {"Pregunta" : "5(1+5)/2",
-						 "Respuesta": "15",
-						"Opciones":["15","7","11","14"]},
+					2: {"Pregunta" : "5(1+2)/3",
+						 "Respuesta": "5",
+						"Opciones":["5","2","3","4","1","6"]},
 					 3: {"Pregunta" : "2(5-2)",
 						  "Respuesta": "6",
-							"Opciones":["1","5","4","6"]}}
+							"Opciones":["1","5","4","6","2","3"]}}
 
 var EstadoDelJuego:bool = false
 var OperacionActiva:bool = false
@@ -62,14 +62,38 @@ func InicioDeJuego():
 	if OperacionActiva == false:
 		OperacionActiva = true
 		var RandomNumber = int(randf_range(1,3))
-		for i in range(0,4):
+		for i in range(0,6):
 			var InstanceNumbers = Numeros.instantiate()
 			Root.add_child(InstanceNumbers)
-			InstanceNumbers.global_position.x = 200*i
+			InstanceNumbers.global_position.x = 180*i
+			if i == 0:
+				InstanceNumbers.global_position.x += 20
+				
+				
+			if i == 5:
+				InstanceNumbers.global_position.x -= 20
+				
 			var PreguntaElegida = Operaciones[RandomNumber]["Pregunta"]	
-			$Control/HBoxContainer/OperacionAritmetica.text = str(PreguntaElegida)
-		
+			$Control/HBoxContainer/TextureRect/OperacionAritmetica.text = str(PreguntaElegida)
 			InstanceNumbers.find_child("AnimatedSprite2D").play(Operaciones[RandomNumber]["Opciones"][i])
+			InstanceNumbers.add_to_group(str(Operaciones[RandomNumber]["Opciones"][i]))
+			
+			
+			if str(Operaciones[RandomNumber]["Opciones"][i]) == str(Operaciones[RandomNumber]["Respuesta"]):
+				InstanceNumbers.add_to_group("Solucion")
+				
+				
+				
+				
+			print(InstanceNumbers.get_groups())
+				
+
+		
+				
+		
+	
+			
+		
 		
 		
 		

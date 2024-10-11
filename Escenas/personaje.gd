@@ -10,6 +10,7 @@ var Recarga:bool = true
 func _ready() -> void:
 	ScreenSize = get_viewport_rect().size
 	$Timer.start()
+	var TablaDeSumas = []
 
 func _process(delta: float) -> void:
 	
