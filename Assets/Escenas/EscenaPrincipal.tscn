@@ -91,7 +91,7 @@ scale = Vector2(23.823, -52.2624)
 [node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/TextureRect/StaticBody2D"]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(-1.09964, -0.151307)
+position = Vector2(-3.16101, 0.150948)
 scale = Vector2(0.0518042, -0.0163421)
 texture = ExtResource("4_kj166")
 
@@ -99,10 +99,10 @@ texture = ExtResource("4_kj166")
 texture_filter = 2
 texture_repeat = 2
 layout_mode = 0
-offset_left = 62.2081
-offset_top = 710.026
-offset_right = 327.208
-offset_bottom = 759.026
+offset_left = 98.2234
+offset_top = 702.114
+offset_right = 363.223
+offset_bottom = 751.114
 scale = Vector2(4.19269, 13.941)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Obten el resultado de :
@@ -113,10 +113,10 @@ vertical_alignment = 1
 texture_filter = 2
 texture_repeat = 2
 layout_mode = 0
-offset_left = 1204.87
-offset_top = 796.802
-offset_right = 1298.87
-offset_bottom = 835.802
+offset_left = 1237.61
+offset_top = 907.225
+offset_right = 1331.61
+offset_bottom = 946.225
 scale = Vector2(5.77133, 15.4605)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Control/HBoxContainer/TextureRect"]
@@ -153,6 +153,12 @@ wait_time = 0.05
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(56, 1174)
 gizmo_extents = 0.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(458, 522)
+scale = Vector2(112.693, -0.0416329)
+zoom = Vector2(0.71, 1.34)
+drag_vertical_enabled = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
