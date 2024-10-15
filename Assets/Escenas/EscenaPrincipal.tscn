@@ -1,14 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://01q6pnnrrggs"]
+[gd_scene load_steps=10 format=3 uid="uid://01q6pnnrrggs"]
 
-[ext_resource type="Texture2D" uid="uid://bjs3bg012nujk" path="res://Assets/spacebg.png" id="1_l1fdj"]
+[ext_resource type="Texture2D" uid="uid://bjs3bg012nujk" path="res://spacebg.png" id="1_l1fdj"]
 [ext_resource type="Script" path="res://Escenas/escena_principal.gd" id="1_lgpwl"]
-[ext_resource type="FontFile" uid="uid://bfc7e8im2qap8" path="res://Assets/Kenney Future.ttf" id="3_ujj8i"]
-[ext_resource type="Texture2D" uid="uid://dfbts4pvhlgre" path="res://Assets/image-removebg-preview_(5)_(1)-transformed.png" id="4_kj166"]
+[ext_resource type="FontFile" uid="uid://bfc7e8im2qap8" path="res://Kenney Future.ttf" id="3_ujj8i"]
+[ext_resource type="Texture2D" uid="uid://dfbts4pvhlgre" path="res://image-removebg-preview_(5)_(1)-transformed.png" id="4_kj166"]
 
 [sub_resource type="Theme" id="Theme_3yqcp"]
 default_font = ExtResource("3_ujj8i")
 
 [sub_resource type="Theme" id="Theme_ufdps"]
+
+[sub_resource type="Theme" id="Theme_b2op6"]
 
 [sub_resource type="Theme" id="Theme_b0nx5"]
 default_font = ExtResource("3_ujj8i")
@@ -24,8 +26,8 @@ script = ExtResource("1_lgpwl")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
 texture_filter = 1
-position = Vector2(332, 669)
-scale = Vector2(1.77188, 2.25938)
+position = Vector2(1203, 357)
+scale = Vector2(3.86021, 5.17962)
 texture = ExtResource("1_l1fdj")
 
 [node name="Timer" type="Timer" parent="."]
@@ -82,66 +84,73 @@ layout_mode = 2
 stretch_mode = 2
 flip_h = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Control/HBoxContainer/TextureRect"]
+[node name="PreguntasLabel" type="StaticBody2D" parent="Control/HBoxContainer/TextureRect"]
 texture_filter = 3
 texture_repeat = 1
-position = Vector2(1024.8, 1112.34)
-scale = Vector2(23.823, -52.2624)
+position = Vector2(1031.34, 1688.25)
+scale = Vector2(23.823, -51.1259)
+collision_priority = -1.0
 
-[node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/TextureRect/StaticBody2D"]
-texture_filter = 1
-texture_repeat = 1
-position = Vector2(-3.16101, 0.150948)
-scale = Vector2(0.0518042, -0.0163421)
-texture = ExtResource("4_kj166")
-
-[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect"]
+[node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect/PreguntasLabel"]
+z_index = 10
 texture_filter = 2
 texture_repeat = 2
-layout_mode = 0
-offset_left = 98.2234
-offset_top = 702.114
-offset_right = 363.223
-offset_bottom = 751.114
-scale = Vector2(4.19269, 13.941)
+offset_left = -44.529
+offset_top = -7.24586
+offset_right = 220.471
+offset_bottom = 41.7542
+rotation = 3.13728
+scale = Vector2(-0.264171, 0.389907)
+theme = SubResource("Theme_b2op6")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Obten el resultado de :
 "
 vertical_alignment = 1
 
-[node name="OperacionAritmetica" type="Label" parent="Control/HBoxContainer/TextureRect"]
+[node name="OperacionAritmetica" type="Label" parent="Control/HBoxContainer/TextureRect/PreguntasLabel"]
+z_index = 10
 texture_filter = 2
 texture_repeat = 2
-layout_mode = 0
-offset_left = 1237.61
-offset_top = 907.225
-offset_right = 1331.61
-offset_bottom = 946.225
-scale = Vector2(5.77133, 15.4605)
+offset_left = 3.161
+offset_top = -9.66067
+offset_right = 268.161
+offset_bottom = 39.3394
+rotation = 3.13728
+scale = Vector2(-0.266269, 0.317605)
+theme = SubResource("Theme_b2op6")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/TextureRect/PreguntasLabel"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(-7.55907, -18.1141)
+scale = Vector2(0.0518042, -0.0163421)
+texture = ExtResource("4_kj166")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="Control/HBoxContainer/TextureRect"]
-position = Vector2(170.254, -7486.58)
+position = Vector2(180.076, -9245.77)
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/HBoxContainer/TextureRect/StaticBody2D2"]
-position = Vector2(847.995, 1680.34)
+position = Vector2(834.898, 1988.04)
 scale = Vector2(0.5, 0.537738)
 texture = ExtResource("4_kj166")
 
 [node name="Label" type="Label" parent="Control/HBoxContainer/TextureRect/StaticBody2D2"]
-offset_left = 563.147
-offset_top = 1451.56
-offset_right = 743.147
-offset_bottom = 1474.56
+offset_left = 553.324
+offset_top = 1767.15
+offset_right = 733.324
+offset_bottom = 1790.15
 scale = Vector2(3.48128, 7.16438)
 theme = SubResource("Theme_b0nx5")
 text = "Numero actual 
 "
 
 [node name="NumeroActual" type="Label" parent="Control/HBoxContainer/TextureRect/StaticBody2D2"]
-offset_left = 815.254
-offset_top = 1546.23
-offset_right = 855.254
-offset_bottom = 1569.23
+offset_left = 805.431
+offset_top = 1893.37
+offset_right = 845.431
+offset_bottom = 1916.37
 scale = Vector2(6.89339, 16.1467)
 theme = SubResource("Theme_e850l")
 text = "

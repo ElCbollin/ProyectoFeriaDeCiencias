@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cye13b0g6yujq"]
 
 [ext_resource type="Script" path="res://Number.gd" id="1_dnpte"]
-[ext_resource type="Texture2D" uid="uid://dsj8et8ijlsvi" path="res://Assets/image-removebg-preview (4).png" id="2_pwrtd"]
+[ext_resource type="Texture2D" uid="uid://dsj8et8ijlsvi" path="res://image-removebg-preview (4).png" id="2_pwrtd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tb0s6"]
 radius = 16.0
@@ -28,12 +28,12 @@ scale = Vector2(0.242931, 0.311226)
 shape = SubResource("CircleShape2D_tb0s6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.329161, 0)
-scale = Vector2(0.0438995, 0.046199)
+position = Vector2(-0.493741, -0.448204)
+scale = Vector2(0.0666581, 0.0721042)
 sprite_frames = SubResource("SpriteFrames_ws4we")
 animation = &"new_animation"
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.06
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

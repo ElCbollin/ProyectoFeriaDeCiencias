@@ -12,4 +12,4 @@ func _process(delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	$AnimatedSprite2D.global_position.y += 30
+	$AnimatedSprite2D.global_position.y += 1

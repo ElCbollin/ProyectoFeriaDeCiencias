@@ -16,6 +16,8 @@ var Operaciones = {1 :{"Pregunta" : "5+2(4-2)",
 var EstadoDelJuego:bool = false
 var OperacionActiva:bool = false
 @onready var Root = get_node("/root/Node2D")
+@onready var Señal = get_node("/root/Node2D/Proyectil")
+
 
 
 var Ship = preload("res://Escenas/Personaje.tscn")
@@ -24,10 +26,17 @@ func _ready() -> void:
 	SizeScreen = get_viewport_rect().size
 	$Control/Button.button_down.connect(Iniciar)
 	
+
 	
 
 	# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	if global.Partida == true:
+		OperacionActiva =false
+		global.Partida = false
+		InicioDeJuego()
+	
 	
 	if $Control/Button.global_position.y >= SizeScreen.y:
 		if EstadoDelJuego == false:
@@ -52,9 +61,21 @@ func _on_timer_timeout() -> void:
 
 func _on_timer_2_timeout() -> void:
 	for v in Root.get_children():
-		if v.name == "Area2D":
-			if v.position.y >= -350:
-				v.position.y -= 25
+		if v.name == "Personaje":
+			
+			if v.position.y > -350:
+				v.position.y -= 90
+				$Control/HBoxContainer/TextureRect/PreguntasLabel.position.y -= 200
+				$Control/HBoxContainer/TextureRect/StaticBody2D2.position.y += 200
+		
+
+				
+		
+				
+				
+			
+				
+		
 
 	
 func InicioDeJuego():
@@ -74,9 +95,10 @@ func InicioDeJuego():
 				InstanceNumbers.global_position.x -= 20
 				
 			var PreguntaElegida = Operaciones[RandomNumber]["Pregunta"]	
-			$Control/HBoxContainer/TextureRect/OperacionAritmetica.text = str(PreguntaElegida)
+			$Control/HBoxContainer/TextureRect/PreguntasLabel/OperacionAritmetica.text = str(PreguntaElegida)
 			InstanceNumbers.find_child("AnimatedSprite2D").play(Operaciones[RandomNumber]["Opciones"][i])
 			InstanceNumbers.add_to_group(str(Operaciones[RandomNumber]["Opciones"][i]))
+			InstanceNumbers.add_to_group("Numbers")
 			
 			
 			if str(Operaciones[RandomNumber]["Opciones"][i]) == str(Operaciones[RandomNumber]["Respuesta"]):
@@ -85,11 +107,11 @@ func InicioDeJuego():
 				
 				
 				
-			print(InstanceNumbers.get_groups())
+				
+				
 				
 
-		
-				
+	
 		
 	
 			
